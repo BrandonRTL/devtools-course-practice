@@ -6,13 +6,14 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+
 #include "include/prime_numbers_application.h"
 
 std::string PrimeNumbersApplication::getHelp(const std::string& appname) {
         return  "This is an application that finds prime numbers in range\n" \
         "Please provide arguments in the following format:\n" +
         appname + " <left_border> <right_borber> "
-        "Where all arguments are positive integer numbers mose than 1.";
+        "Where all arguments are positive integer numbers more than 1.";
 }
 
 std::string PrimeNumbersApplication::operator()(int argc, const char** argv) {
@@ -48,13 +49,12 @@ std::string PrimeNumbersApplication::operator()(int argc, const char** argv) {
     return oss.str();
 }
 bool PrimeNumbersApplication::checkArgument(const std::string& str) {
-    bool res = true;
     for (size_t i = 0; i < str.size(); i++) {
         if (str[i] < '0' || str[i] > '9') {
-            res = false;
+            return false;
         }
     }
-    return res;
+    return true;
 }
 int PrimeNumbersApplication::parseArgument(const char* arg) {
     if (!checkArgument(arg)) {

@@ -75,20 +75,20 @@ set_tests_properties (${prefix}_can_Check_Format_4 PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_test_test
+    NAME ${prefix}_can_Print_Prime_Numbers_1
     COMMAND ${APPLICATION} 2 4
 )
 
-set_tests_properties (${prefix}_test_test PROPERTIES
+set_tests_properties (${prefix}_can_Print_Prime_Numbers_1 PROPERTIES
     PASS_REGULAR_EXPRESSION "2 3"
     LABELS "${MODULE}")
 
 
 add_test(
-    NAME ${prefix}_can_Print_Prime_Numbers
+    NAME ${prefix}_can_Print_Prime_Numbers_2
     COMMAND ${APPLICATION} 210 220
 )
 
-set_tests_properties (${prefix}_can_Print_Prime_Numbers PROPERTIES
+set_tests_properties (${prefix}_can_Print_Prime_Numbers_2 PROPERTIES
     PASS_REGULAR_EXPRESSION "211"
     LABELS "${MODULE}")
